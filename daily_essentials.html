@@ -1,13 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outdoor Clothes</title>
+  <link rel="stylesheet" href="dummy.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <button class="back-btn" onclick="goHome()">← Back</button>
+        <h2>Outdoor Clothes ⛅</h2>
+    </div>
+
+    <!-- Swipe Section -->
+    <div class="swipe-wrapper">
+
+        <div class="swipe-card purple">
+            <img src="dress.png">
+            <p>Dress <span>7</span></p>
+        </div>
+
+        <div class="swipe-card blue">
+            <img src="jeans.png">
+            <p>Jeans <span>3</span></p>
+        </div>
+
+        <div class="swipe-card pink">
+            <img src="top.png">
+            <p>Top <span>2</span></p>
+        </div>
+
+        <div class="swipe-card red">
+            <img src="acc.png">
+            <p>Accessories <span>4</span></p>
+        </div>
+
+        <div class="swipe-card green">
+            <img src="shoe.png">
+            <p>Footwear <span>2</span></p>
+        </div>
+
+    </div>
+
+</div>
+<script>
+const container = document.querySelector('.swipe-wrapper');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+container.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+});
+
+container.addEventListener('mouseleave', () => isDown = false);
+container.addEventListener('mouseup', () => isDown = false);
+
+container.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    container.scrollLeft = scrollLeft - walk;
+});
+</script>
+
 </body>
-</html>
+<html>
 
 
 

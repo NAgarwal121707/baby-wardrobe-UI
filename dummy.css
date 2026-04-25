@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    background: #111;
+    font-family: Arial;
+}
+
+/* Container */
+.container {
+    min-height: 100vh;
+    background: #f4f4f4;
+    padding: 15px;
+}
+
+/* Header */
+.header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #ffd54f;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+/* Swipe Container */
+.swipe-wrapper {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+}
+
+/* Hide scrollbar */
+.swipe-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* Cards */
+.swipe-card {
+    min-width: 160px;
+    height: 180px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Images */
+.swipe-card img {
+    width: 80px;
+}
+
+/* Text */
+.swipe-card p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.swipe-card span {
+    background: gold;
+    padding: 4px 8px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+/* Colors */
+.purple { background: #d1c4e9; }
+.blue   { background: #b3e5fc; }
+.pink   { background: #f8bbd0; }
+.red    { background: #ffcdd2; }
+.green  { background: #c8e6c9; }
